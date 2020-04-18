@@ -1,20 +1,20 @@
 package ch.heigvd.gen.monopoly;
 
-public class Player {
+public class Piece {
     private String name;
-    private Piece piece;
+    private Square location;
 
-    public Player(String name, Piece piece) {
+    public Piece(String name, Square location) {
         this.name = name;
-        this.piece = piece;
+        this.location = location;
     }
 
     public String getName() {
         return name;
     }
 
-    public Piece getPiece() {
-        return piece;
+    public Square getLocation() {
+        return location;
     }
 
     @Override
