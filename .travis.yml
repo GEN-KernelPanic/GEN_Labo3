@@ -1,12 +1,6 @@
 language: java
 jdk: oraclejdk11
-
-deploy:
-  provider: pages
-  keep_history: true
-  on:
-    branch: master
-    
+   
 cache:
   directories:
     - $HOME/.m2
