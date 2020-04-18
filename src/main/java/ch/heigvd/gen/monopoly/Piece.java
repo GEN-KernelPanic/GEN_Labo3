@@ -21,4 +21,8 @@ public class Piece {
     public String toString() {
         return getName();
     }
+
+    public void setLocation(Square newLocation) {
+        location = newLocation;
+    }
 }

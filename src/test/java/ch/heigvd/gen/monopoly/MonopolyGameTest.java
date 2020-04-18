@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MonopolyGameTest {
+    private String[] players = {"Jaques", "Alberte", "Matthieu", "Philibert", "Clarisse"};
+
     @Test
     public void numberOfPlayerShouldBeValid() {
         String[] notEnough = new String[1];
@@ -17,5 +19,11 @@ public class MonopolyGameTest {
         assertThrows(IllegalArgumentException.class, () -> {
             new MonopolyGame(tooMuch);
         });
+    }
+
+    @Test
+    public void gameSimulation() {
+        MonopolyGame mg = new MonopolyGame(players);
+        mg.playGame();
     }
 }
