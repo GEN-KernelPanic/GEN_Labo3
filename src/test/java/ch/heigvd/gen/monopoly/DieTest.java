@@ -21,7 +21,7 @@ public class DieTest {
     }
 
     @RepeatedTest(50)
-    void faceValueShouldBeBetween1andUpperBound() {
+    void faceValueShouldBeBetween1andMaxValue() {
         d.roll();
         assertTrue(d.getFaceValue() >= 1 && d.getFaceValue() <= d.getMaxValue());
     }
