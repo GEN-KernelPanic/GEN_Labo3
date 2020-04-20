@@ -30,3 +30,4 @@ public class Board {
         return squares.get((squares.indexOf(oldLocation) + movement) % NBR_OF_SQUARES);
     }
 }
+slkdnfaosdlfnasldfnaésdkfélaskndfléksan
