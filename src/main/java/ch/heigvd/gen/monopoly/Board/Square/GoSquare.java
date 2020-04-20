@@ -11,6 +11,7 @@ public class GoSquare extends Square {
 
     @Override
     public void landedOn(Player p) {
-        //TODO : Add $200 to the player
+        p.addCash(REWARD);
+        System.out.println(p.getName() + " won " + REWARD + "$ and now owns " + p.getNetWorth() + "$");
     }
 }
