@@ -13,7 +13,7 @@ public class PieceTest {
     @BeforeAll
     static void setUp() {
         pieceName = "test";
-        piece = new Piece(pieceName, new RegularSquare("Testing square"));
+        piece = new Piece(pieceName);
     }
 
     @Test

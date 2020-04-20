@@ -10,11 +10,13 @@ public class Player {
     private String name;
     private int cash;
     private Piece piece;
+    private Square location;
 
-    public Player(String name, Piece piece) {
+    public Player(String name, Piece piece, Square location) {
         this.name = name;
         this.cash = 1500;
         this.piece = piece;
+        this.location = location;
     }
 
     public String getName() {
@@ -23,6 +25,14 @@ public class Player {
 
     public Piece getPiece() {
         return piece;
+    }
+
+    public Square getLocation() {
+        return location;
+    }
+
+    public void setLocation(Square newLocation) {
+        location = newLocation;
     }
 
     public int getNetWorth() { return cash; }
@@ -57,13 +67,13 @@ public class Player {
 
         System.out.println(this + " got a score of " + score);
 
-        Square oldLocation = piece.getLocation();
+        Square oldLocation = getLocation();
         Square newLocation = board.getSquare(oldLocation, score);
 
         System.out.println(this + " moves from \"" + oldLocation + "\" to \""
                 + newLocation + "\"");
 
-        piece.setLocation(newLocation);
-        piece.getLocation().landedOn(this);
+        setLocation(newLocation);
+        getLocation().landedOn(this);
     }
 }

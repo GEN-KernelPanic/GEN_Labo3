@@ -16,13 +16,13 @@ public class GoToJailSquareTest {
     static void setUp() {
         jail = new RegularSquare("Jail");
         goToJailSquare = new GoToJailSquare(jail);
-        player = new Player("Testing player", new Piece("Testing piece", new GoSquare()));
+        player = new Player("Testing player", new Piece("Testing piece"), new GoSquare());
     }
 
     @Test
     void playerShouldGoToJailAfterLandedOnGoToJailSquare() {
-        player.getPiece().setLocation(goToJailSquare);
-        player.getPiece().getLocation().landedOn(player);
-        assertEquals(player.getPiece().getLocation(), jail);
+        player.setLocation(goToJailSquare);
+        player.getLocation().landedOn(player);
+        assertEquals(player.getLocation(), jail);
     }
 }
