@@ -1,5 +1,7 @@
 package ch.heigvd.gen.monopoly.Board;
 
+import ch.heigvd.gen.monopoly.Board.Square.Square;
+
 import java.util.ArrayList;
 
 public class Board {

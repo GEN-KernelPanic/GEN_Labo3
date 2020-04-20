@@ -1,7 +1,6 @@
 package ch.heigvd.gen.monopoly.Board;
 
-import ch.heigvd.gen.monopoly.Board.Board;
-import ch.heigvd.gen.monopoly.Board.Square;
+import ch.heigvd.gen.monopoly.Board.Square.Square;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -10,9 +9,6 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * Tests unitaires pour la classe représentant le plateau du Monopoly
- */
 class BoardTest {
     private static Board board;
 

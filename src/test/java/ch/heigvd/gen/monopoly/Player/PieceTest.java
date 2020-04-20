@@ -1,7 +1,6 @@
 package ch.heigvd.gen.monopoly.Player;
 
-import ch.heigvd.gen.monopoly.Board.Square;
-import ch.heigvd.gen.monopoly.Player.Piece;
+import ch.heigvd.gen.monopoly.Board.Square.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +13,7 @@ public class PieceTest {
     @BeforeAll
     static void setUp() {
         pieceName = "test";
-        piece = new Piece(pieceName, new Square("Go"));
+        piece = new Piece(pieceName, new RegularSquare("Testing square"));
     }
 
     @Test
