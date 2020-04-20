@@ -1,5 +1,10 @@
 package ch.heigvd.gen.monopoly;
 
+import ch.heigvd.gen.monopoly.Board.Board;
+import ch.heigvd.gen.monopoly.Die.Die;
+import ch.heigvd.gen.monopoly.Player.Piece;
+import ch.heigvd.gen.monopoly.Player.Player;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;

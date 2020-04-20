@@ -1,4 +1,6 @@
-package ch.heigvd.gen.monopoly;
+package ch.heigvd.gen.monopoly.Player;
+
+import ch.heigvd.gen.monopoly.Board.Square;
 
 public class Piece {
     private String name;

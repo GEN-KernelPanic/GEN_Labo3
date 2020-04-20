@@ -1,7 +1,6 @@
-package ch.heigvd.gen.monopoly;
+package ch.heigvd.gen.monopoly.Board;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class Board {
     private final static int NBR_OF_SQUARES = 40;
