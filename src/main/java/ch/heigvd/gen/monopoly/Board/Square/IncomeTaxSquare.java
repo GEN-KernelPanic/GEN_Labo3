@@ -4,7 +4,7 @@ import ch.heigvd.gen.monopoly.Player.Player;
 
 public class IncomeTaxSquare extends Square {
     public IncomeTaxSquare() {
-        super("IncomeTax");
+        super("Income tax");
     }
 
     @Override

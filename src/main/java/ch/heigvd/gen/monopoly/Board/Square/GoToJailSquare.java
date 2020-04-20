@@ -6,7 +6,7 @@ public class GoToJailSquare extends Square {
     private Square jail;
 
     public GoToJailSquare(Square jail) {
-        super("GoToJail");
+        super("Go to jail");
         this.jail = jail;
     }
 

@@ -29,7 +29,7 @@ class BoardTest {
         String[] specNames = new String[nbrOfSquares];
         specNames[0] = "Go";
         for (int i = 1; i < nbrOfSquares; i++) {
-            specNames[i] = "Square " + i;
+            specNames[i] = "" + i;
         }
         specNames[4] = "Income tax";
         specNames[10] = "Jail";
@@ -41,7 +41,7 @@ class BoardTest {
             effectiveNames[i] = squares.get(i).getName();
         }
 
-        assertArrayEquals(effectiveNames, specNames);
+        assertArrayEquals(specNames, effectiveNames);
     }
 
     @Test
@@ -49,11 +49,11 @@ class BoardTest {
         Square oldLocation = board.getSquares().get(13);
         Square newLocation = board.getSquare(oldLocation, 8);
 
-        assertEquals(newLocation, board.getSquares().get(21));
+        assertEquals(board.getSquares().get(21), newLocation);
 
         oldLocation = board.getSquares().get(37);
         newLocation = board.getSquare(oldLocation, 7);
 
-        assertEquals(newLocation, board.getSquares().get(4));
+        assertEquals(board.getSquares().get(4), newLocation);
     }
 }
