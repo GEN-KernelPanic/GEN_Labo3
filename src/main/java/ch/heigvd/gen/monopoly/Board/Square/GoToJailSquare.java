@@ -15,4 +15,8 @@ public class GoToJailSquare extends Square {
         p.setLocation(jail);
         p.getLocation().landedOn(p);
     }
+
+    public Square getJail() {
+        return jail;
+    }
 }
