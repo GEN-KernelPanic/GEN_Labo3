@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class IncomeTaxSquareTest {
     private static IncomeTaxSquare incomeTaxSquare;
     private static Player player;
@@ -18,5 +20,11 @@ public class IncomeTaxSquareTest {
     @BeforeAll
     static void setUp() {
         incomeTaxSquare = new IncomeTaxSquare();
+    }
+
+    @Test
+    void anIncomeTaxSquareShouldHaveTheCorrectName() {
+        String expectedName = "Income tax";
+        assertTrue(expectedName.equals(incomeTaxSquare.getName()));
     }
 }
