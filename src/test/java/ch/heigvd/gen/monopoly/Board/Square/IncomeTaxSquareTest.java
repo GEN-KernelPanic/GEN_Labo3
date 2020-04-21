@@ -12,16 +12,11 @@ public class IncomeTaxSquareTest {
 
     @BeforeEach
     void initPlayer() {
-        player = new Player("Testing player", new Piece("Testing piece", new GoSquare()));
+        player = new Player("Testing player", new Piece("Testing piece"), new GoSquare());
     }
 
     @BeforeAll
     static void setUp() {
         incomeTaxSquare = new IncomeTaxSquare();
-    }
-
-    @Test
-    void playerShouldPayAfterLandingOnIncomeTaxSquare() {
-        //TODO : test that the player's worth decreased the right amount
     }
 }

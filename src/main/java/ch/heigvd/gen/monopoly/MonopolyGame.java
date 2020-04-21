@@ -33,7 +33,7 @@ public class MonopolyGame {
         Collections.shuffle(pieceNames);
         int counter = -1;
         for (String playerName : players) {
-            this.players.add(new Player(playerName, new Piece(pieceNames.get(++counter), board.getSquares().get(0))));
+            this.players.add(new Player(playerName, new Piece(pieceNames.get(++counter)), board.getSquares().get(0)));
         }
     }
 

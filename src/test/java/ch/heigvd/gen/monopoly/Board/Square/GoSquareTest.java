@@ -12,11 +12,6 @@ public class GoSquareTest {
     @BeforeAll
     static void setUp() {
         goSquare = new GoSquare();
-        player = new Player("Testing player", new Piece("Testing piece", new GoSquare()));
-    }
-
-    @Test
-    void playerCashShouldIncreaseAfterLandedOnGoSquare() {
-        // TODO : test that the player's value is increased by $200
+        player = new Player("Testing player", new Piece("Testing piece"), new GoSquare());
     }
 }
