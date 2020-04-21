@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 public class GoToJailSquareTest {
     private static GoToJailSquare goToJailSquare;
@@ -24,5 +26,16 @@ public class GoToJailSquareTest {
         player.setLocation(goToJailSquare);
         player.getLocation().landedOn(player);
         assertEquals(player.getLocation(), jail);
+    }
+
+    @Test
+    void aGoToJailSquareShouldHaveTheCorrectName() {
+        String expectedName = "Go to jail";
+        assertTrue(expectedName.equals(goToJailSquare.getName()));
+    }
+
+    @Test
+    void aGoToJailSquareMustLinkToCorrectJailSquare() {
+        assertSame(jail, goToJailSquare.getJail());
     }
 }
