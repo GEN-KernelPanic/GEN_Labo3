@@ -1,6 +1,7 @@
 package ch.heigvd.gen.monopoly.Player;
 
 import ch.heigvd.gen.monopoly.Board.Board;
+import ch.heigvd.gen.monopoly.Die.Cup;
 import ch.heigvd.gen.monopoly.Die.Die;
 import ch.heigvd.gen.monopoly.Board.Square.Square;
 
@@ -58,12 +59,9 @@ public class Player {
         return getName();
     }
 
-    public void takeTurn(Board board, LinkedList<Die> dice) {
-        int score = 0;
-        for (Die d: dice) {
-            d.roll();
-            score += d.getFaceValue();
-        }
+    public void takeTurn(Board board, Cup cup) {
+        cup.roll();
+        int score = cup.getTotal();
 
         System.out.println(this + " got a score of " + score);
 

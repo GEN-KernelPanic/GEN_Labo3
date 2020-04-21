@@ -1,6 +1,7 @@
 package ch.heigvd.gen.monopoly;
 
 import ch.heigvd.gen.monopoly.Board.Board;
+import ch.heigvd.gen.monopoly.Die.Cup;
 import ch.heigvd.gen.monopoly.Die.Die;
 import ch.heigvd.gen.monopoly.Player.Piece;
 import ch.heigvd.gen.monopoly.Player.Player;
@@ -17,7 +18,7 @@ public class MonopolyGame {
             "Car", "Shoe", "TV", "Dog", "Pingouin", "Shield", "Canon", "Horse");
 
     private final LinkedList<Player> players = new LinkedList<>();
-    private final LinkedList<Die> dice = new LinkedList<>();
+    private final Cup cup = new Cup(NUMBER_OF_DICE);
     private final Board board;
 
     private int currentTurn;
@@ -27,8 +28,6 @@ public class MonopolyGame {
             throw new IllegalArgumentException("The number of players is invalid.");
 
         this.board = new Board();
-        for (int i = 0; i < NUMBER_OF_DICE; i++)
-            this.dice.add(new Die());
 
         Collections.shuffle(pieceNames);
         int counter = -1;
@@ -48,7 +47,7 @@ public class MonopolyGame {
             System.out.println("Turn " + currentTurn);
 
             for (Player player : players) {
-                player.takeTurn(board, dice);
+                player.takeTurn(board, cup);
                 System.out.println();
             }
         }
