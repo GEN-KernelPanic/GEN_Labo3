@@ -20,3 +20,5 @@ _Auteurs : Clarisse Fleurimont et Matthieu Burguburu_
 - Lorsqu'un joueur arrive sur la case "Go-To-Jail", ce joueur doit aller sur la case "Jail"
 - Au tour suivant son entrée dans la case "Jail", un joueur quitte la-dite case comme il le ferai pour une case normale
 - Lorsqu'un joueur arrive sur la case "Income-Tax" il doit payer un minimum de $200 ou 10% de leurs possession ("worth")
+
+_date : 21 avril 2020_
