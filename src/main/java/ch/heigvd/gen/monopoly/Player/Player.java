@@ -8,10 +8,12 @@ import java.util.LinkedList;
 
 public class Player {
     private String name;
+    private int cash;
     private Piece piece;
 
     public Player(String name, Piece piece) {
         this.name = name;
+        this.cash = 1500;
         this.piece = piece;
     }
 
@@ -21,6 +23,24 @@ public class Player {
 
     public Piece getPiece() {
         return piece;
+    }
+
+    public int getNetWorth() { return cash; }
+
+    public void addCash(int amount) {
+        if (amount < 0) {
+            throw new IllegalArgumentException("Can't add negative money to a player");
+        }
+        cash += amount;
+    }
+
+    public void reduceCash(int amount) {
+        if (amount < 0) {
+            throw new IllegalArgumentException("Can't remove negative money from a player");
+        } else if (amount > cash) {
+            throw new IllegalArgumentException("Players can't go into debt");
+        }
+        cash -= amount;
     }
 
     @Override
@@ -38,9 +58,12 @@ public class Player {
         System.out.println(this + " got a score of " + score);
 
         Square oldLocation = piece.getLocation();
-        piece.setLocation(board.getSquare(oldLocation, score));
+        Square newLocation = board.getSquare(oldLocation, score);
 
         System.out.println(this + " moves from \"" + oldLocation + "\" to \""
-                + piece.getLocation()+ "\"");
+                + newLocation + "\"");
+
+        piece.setLocation(newLocation);
+        piece.getLocation().landedOn(this);
     }
 }
