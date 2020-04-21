@@ -1,7 +1,6 @@
 package ch.heigvd.gen.monopoly.Board;
 
-import ch.heigvd.gen.monopoly.Board.Board;
-import ch.heigvd.gen.monopoly.Board.Square;
+import ch.heigvd.gen.monopoly.Board.Square.Square;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -10,9 +9,6 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * Tests unitaires pour la classe représentant le plateau du Monopoly
- */
 class BoardTest {
     private static Board board;
 
@@ -33,7 +29,7 @@ class BoardTest {
         String[] specNames = new String[nbrOfSquares];
         specNames[0] = "Go";
         for (int i = 1; i < nbrOfSquares; i++) {
-            specNames[i] = "Square " + i;
+            specNames[i] = "" + i;
         }
         specNames[4] = "Income tax";
         specNames[10] = "Jail";
@@ -45,7 +41,7 @@ class BoardTest {
             effectiveNames[i] = squares.get(i).getName();
         }
 
-        assertArrayEquals(effectiveNames, specNames);
+        assertArrayEquals(specNames, effectiveNames);
     }
 
     @Test
@@ -53,11 +49,11 @@ class BoardTest {
         Square oldLocation = board.getSquares().get(13);
         Square newLocation = board.getSquare(oldLocation, 8);
 
-        assertEquals(newLocation, board.getSquares().get(21));
+        assertEquals(board.getSquares().get(21), newLocation);
 
         oldLocation = board.getSquares().get(37);
         newLocation = board.getSquare(oldLocation, 7);
 
-        assertEquals(newLocation, board.getSquares().get(4));
+        assertEquals(board.getSquares().get(4), newLocation);
     }
 }

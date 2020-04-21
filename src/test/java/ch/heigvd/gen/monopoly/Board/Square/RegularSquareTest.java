@@ -1,6 +1,5 @@
-package ch.heigvd.gen.monopoly.Board;
+package ch.heigvd.gen.monopoly.Board.Square;
 
-import ch.heigvd.gen.monopoly.Board.Square;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -8,14 +7,14 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class SquareTest {
-    private static Square square;
+public class RegularSquareTest {
+    private static RegularSquare square;
     private static String squareName;
 
     @BeforeAll
     static void setUp() {
-        squareName = "test";
-        square = new Square(squareName);
+        squareName = "Testing square";
+        square = new RegularSquare(squareName);
     }
 
     @Test
@@ -24,9 +23,9 @@ public class SquareTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"Square", "Not a square", "Just a name", "This is test", "Hello"})
+    @ValueSource(strings = {"Square", "Not a Square", "Just a name", "This is test", "Hello"})
     void aSquareShouldHaveTheCorrectName(String name) {
-        Square square = new Square(name);
+        RegularSquare square = new RegularSquare(name);
         assertEquals(square.getName(), name);
     }
 }

@@ -1,6 +1,8 @@
-package ch.heigvd.gen.monopoly.Board;
+package ch.heigvd.gen.monopoly.Board.Square;
 
-public class Square {
+import ch.heigvd.gen.monopoly.Player.Player;
+
+public abstract class Square {
     private String name;
 
     public Square(String name) {
@@ -10,6 +12,8 @@ public class Square {
     public String getName() {
         return name;
     }
+
+    public abstract void landedOn(Player p);
 
     @Override
     public String toString() {
